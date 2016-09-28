@@ -7,6 +7,9 @@ function Tennis(){
 		scoreB = 0;
 	}
 
+	this.plarerAGetScore = function(){
+		scoreA++;
+	}
 }
 
 describe("Tennis()", function() {
