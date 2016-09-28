@@ -1,18 +1,37 @@
 function Tennis(){
 	var scoreA;
 	var scoreB;
+
+	var echoScoreA;
+	var echoScoreB;
 	
 	this.newGame = function(){
 		scoreA = 0;
 		scoreB = 0;
 	}
 
-	this.plarerAGetScore = function(){
+	this.plaryerAGetScore = function(){
 		scoreA++;
 	}
 
-	this.plarerBGetScore = function(){
+	this.plaryerBGetScore = function(){
 		scoreB++;
+	}
+
+	this.echo = function(){
+		if(scoreA === 0){
+			echoScoreA = 'Love'
+		}else if(scoreA === 1){
+			echoScoreA = 'Fifteen';
+		}else if(scoreA === 2){
+			echoScoreA = 'Thirty';
+		}else if(scoreA === 3){
+			echoScoreA = 'Forty';
+		}else if(scoreA === 4){
+			scoreA = 0;
+			scoreB = 0;
+			return "Love - Love";
+		}
 	}
 }
 
