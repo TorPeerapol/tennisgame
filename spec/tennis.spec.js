@@ -21,4 +21,11 @@ describe("Tennis()", function() {
 	it('should "Player A won" start game',function(){
 		expect(test.echo()).toEqual("Player A won");
 	});
+
+
+	it('should "Love - Fifty" start game',function(){
+		expect(test.echo()).toEqual("Love - Fifty");
+	});
+	
+
 });
