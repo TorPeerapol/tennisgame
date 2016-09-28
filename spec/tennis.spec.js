@@ -30,7 +30,21 @@ function Tennis(){
 		}else if(scoreA === 4){
 			scoreA = 0;
 			scoreB = 0;
-			return "Love - Love";
+			return "Player A won";
+		}
+
+		if(scoreB === 0){
+			echoScoreB = 'Love'
+		}else if(scoreB === 1){
+			echoScoreB = 'Fifteen';
+		}else if(scoreB === 2){
+			echoScoreB = 'Thirty';
+		}else if(scoreB === 3){
+			echoScoreB = 'Forty';
+		}else if(scoreB === 4){
+			scoreA = 0;
+			scoreB = 0;
+			return "Player B won";
 		}
 	}
 }
