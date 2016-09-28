@@ -27,9 +27,6 @@ function Tennis(){
 			echoScoreA = 'Thirty';
 		}else if(scoreA === 3){
 			echoScoreA = 'Forty';
-		}else if(scoreA === 4){
-			newGame();
-			return "Player A won";
 		}
 
 		if(scoreB === 0){
@@ -40,52 +37,80 @@ function Tennis(){
 			echoScoreB = 'Thirty';
 		}else if(scoreB === 3){
 			echoScoreB = 'Forty';
-		}else if(scoreB === 4){
-			newGame();
-			return "Player B won";
 		}
 
-		return echoScoreA + " - " + echoScoreB;
+		if(scoreA < 4 && scoreB < 4){			
+			return echoScoreA + " - " + echoScoreB;
+		}
+		else if(scoreA === 4){
+			this.newGame();
+			return "Player A won";
+		}else if(scoreB === 4){
+			this.newGame();
+			return "Player B won";
+		}
+			
 	}
 }
 
 describe("Tennis()", function() {
+
 	var test = new Tennis();
 	test.newGame();
+
     it('should "Love - Love" start game',function(){
   		expect(test.echo()).toEqual("Love - Love");
     });
-	it('should "Fifteen - Love" start game',function(){
+
+	it('should "Fifteen - Love"',function(){
+		test.plaryerAGetScore();
 		expect(test.echo()).toEqual("Fifteen - Love");
 	});
-	it('should "Thirty - Love" start game',function(){
+	it('should "Thirty - Love"',function(){
+		test.plaryerAGetScore();
 		expect(test.echo()).toEqual("Thirty - Love");
 	});
-	it('should "Forty - Love" start game',function(){
+	it('should "Forty - Love"',function(){
+		test.plaryerAGetScore();
 		expect(test.echo()).toEqual("Forty - Love");
 	});
-	it('should "Player A won" start game',function(){
+	it('should "Player A won"',function(){
+		test.plaryerAGetScore();
 		expect(test.echo()).toEqual("Player A won");
 	});
 
 
-	it('should "Love - Fifty" start game',function(){
-		expect(test.echo()).toEqual("Love - Fifty");
+	it('should "Love - Fifteen"',function(){
+		test.plaryerBGetScore();
+		expect(test.echo()).toEqual("Love - Fifteen");
 	});
-	it('should "Love - Thirty" start game',function(){
+	it('should "Love - Thirty"',function(){
+		test.plaryerBGetScore();
   		expect(test.echo()).toEqual("Love - Thirty");
     });
-	it('should "Love - Forty" start game',function(){
+	it('should "Love - Forty"',function(){
+		test.plaryerBGetScore();
   		expect(test.echo()).toEqual("Love - Forty");
     });
-	it('should "Player B won" start game',function(){
+	it('should "Player B won"',function(){
+		test.plaryerBGetScore();
   		expect(test.echo()).toEqual("Player B won");
  	});
-	it('should "Fifty - Fifty" start game',function(){
-		expect(test.echo()).toEqual("Fifty - Fifty");
+
+	it('should "Fifteen - Fifteen"',function(){
+		test.plaryerAGetScore();
+		test.plaryerBGetScore();
+		expect(test.echo()).toEqual("Fifteen - Fifteen");
 	});
-	it('should "Thirty - Fifty" start game',function(){
-		expect(test.echo()).toEqual("Love - Thirty");
+	it('should "Fifteen - Thirty"',function(){
+		test.plaryerBGetScore();
+		expect(test.echo()).toEqual("Fifteen - Thirty");
 	});
+	it('should "Fifteen - Forty"',function(){
+		test.plaryerBGetScore();
+		expect(test.echo()).toEqual("Fifteen - Forty");
+	});
+
+	
 
 });
