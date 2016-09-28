@@ -10,6 +10,10 @@ function Tennis(){
 	this.plarerAGetScore = function(){
 		scoreA++;
 	}
+
+	this.plarerBGetScore = function(){
+		scoreB++;
+	}
 }
 
 describe("Tennis()", function() {
