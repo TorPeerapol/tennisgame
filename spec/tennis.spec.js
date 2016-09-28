@@ -28,10 +28,11 @@ function Tennis(){
 		}else if(scoreA === 3){
 			echoScoreA = 'Forty';
 		}else if(scoreA === 4){
-			scoreA = 0;
-			scoreB = 0;
+			newGame();
 			return "Player A won";
-		}else if(scoreB === 0){
+		}
+
+		if(scoreB === 0){
 			echoScoreB = 'Love';
 		}else if(scoreB === 1){
 			echoScoreB = 'Fifteen';
@@ -40,8 +41,7 @@ function Tennis(){
 		}else if(scoreB === 3){
 			echoScoreB = 'Forty';
 		}else if(scoreB === 4){
-			scoreA = 0;
-			scoreB = 0;
+			newGame();
 			return "Player B won";
 		}
 
@@ -51,6 +51,7 @@ function Tennis(){
 
 describe("Tennis()", function() {
 	var test = new Tennis();
+	test.newGame();
     it('should "Love - Love" start game',function(){
   		expect(test.echo()).toEqual("Love - Love");
     });
@@ -86,6 +87,5 @@ describe("Tennis()", function() {
 	it('should "Thirty - Fifty" start game',function(){
 		expect(test.echo()).toEqual("Love - Thirty");
 	});
-
 
 });
