@@ -1,14 +1,19 @@
 function Tennis(){
-	  this.echo = function(){
-			  return "Love - Love";
-		}
+	var scoreA;
+	var scoreB;
+	
+	this.newGame = function(){
+		scoreA = 0;
+		scoreB = 0;
+	}
+
 }
 
 describe("Tennis()", function() {
 	var test = new Tennis();
-  it('should "Love - Love" start game',function(){
-  	expect(test.echo()).toEqual("Love - Love");
-  });
+    it('should "Love - Love" start game',function(){
+  		expect(test.echo()).toEqual("Love - Love");
+    });
 	it('should "Fifteen - Love" start game',function(){
 		expect(test.echo()).toEqual("Fifteen - Love");
 	});
