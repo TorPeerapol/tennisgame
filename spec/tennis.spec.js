@@ -20,7 +20,7 @@ function Tennis(){
 
 	this.echo = function(){
 		if(scoreA === 0){
-			echoScoreA = 'Love'
+			echoScoreA = 'Love';
 		}else if(scoreA === 1){
 			echoScoreA = 'Fifteen';
 		}else if(scoreA === 2){
@@ -31,10 +31,8 @@ function Tennis(){
 			scoreA = 0;
 			scoreB = 0;
 			return "Player A won";
-		}
-
-		if(scoreB === 0){
-			echoScoreB = 'Love'
+		}else if(scoreB === 0){
+			echoScoreB = 'Love';
 		}else if(scoreB === 1){
 			echoScoreB = 'Fifteen';
 		}else if(scoreB === 2){
@@ -46,6 +44,8 @@ function Tennis(){
 			scoreB = 0;
 			return "Player B won";
 		}
+
+		return echoScoreA + " - " + echoScoreB;
 	}
 }
 
@@ -72,14 +72,14 @@ describe("Tennis()", function() {
 		expect(test.echo()).toEqual("Love - Fifty");
 	});
 	it('should "Love - Thirty" start game',function(){
-  	expect(test.echo()).toEqual("Love - Thirty");
-  });
+  		expect(test.echo()).toEqual("Love - Thirty");
+    });
 	it('should "Love - Forty" start game',function(){
-  	expect(test.echo()).toEqual("Love - Forty");
-  });
+  		expect(test.echo()).toEqual("Love - Forty");
+    });
 	it('should "Player B won" start game',function(){
-  	expect(test.echo()).toEqual("Player B won");
-  });
+  		expect(test.echo()).toEqual("Player B won");
+ 	});
 	it('should "Fifty - Fifty" start game',function(){
 		expect(test.echo()).toEqual("Fifty - Fifty");
 	});
